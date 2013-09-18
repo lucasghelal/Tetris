@@ -164,29 +164,7 @@
    (check-equal? (limpa (tetris C1_FIXA_TT1 C1_LARGURA C1_ALTURA TT1 empty TIMEOUT))
                  (tetris C1_FIXA_TT1_LIMPA C1_LARGURA C1_ALTURA TT1 empty TIMEOUT))))
 
-(define igual1-tests
-  (test-suite
-   "igual tests"
-   (check-equal? (igual1 0 0 (list 0 0 0 0)) empty)
-   (check-equal? (igual1 1 0 (list 1 1 1 1)) (list (posn 1 0) (posn 1 1) (posn 1 2) (posn 1 3)))
-   (check-equal? (igual1 2 0 (list 0 0 0 0)) empty)
-   (check-equal? (igual1 3 0 (list 0 0 0 0)) empty)))
-(define lipeca-tests
-  (test-suite
-   "lipeca tests"
-   (check-equal? (lipeca 0 0  '((0 0 0 0)
-             (1 1 1 1)
-             (0 0 0 0)
-             (0 0 0 0)))(list empty (list (posn 1 0) (posn 1 1) (posn 1 2) (posn 1 3)) empty empty))))
- (define soma-tests
-   (test-suite
-    "soma tests"
-    (check-equal? (soma (list (posn 1 0) (posn 1 1) (posn 1 2) (posn 1 3)) (posn 1 1))
-                  (list (posn 2 1) (posn 2 2) (posn 2 3) (posn 2 4)))))
 ;; ---------------------------------------------------------------------
-
-;; ---------------------------------------------------------------------
-
 
 ;; Função que executa um grupo de testes.
 (define (executar-testes . testes)
@@ -194,8 +172,7 @@
   (void))
 
 ;; Chama a função para executar os testes.
-(executar-testes tetramino->pos-tests)
-#;(executar-testes make-linha-tests
+(executar-testes make-linha-tests
                  make-campo-tests
                  centraliza-tests
                  make-tetris-tests

@@ -27,7 +27,10 @@
          limpa
          trata-tecla
          trata-tick
-         desenha)
+         desenha
+         soma
+         lipeca
+         igual1)
 
 ;; -> Tetris
 ;; Cria o jogo inicial.
@@ -106,8 +109,35 @@
 ;; as posições (posn 0 0) (posn 1 0) (pos 1 1) (pos 2 0).
 ;;
 ;; Veja os testes para outros exemplos de como esta função deve funcionar.
+
 (define (tetramino->lista-pos t)
-  empty)
+  
+  (define peca (list-ref (tetramino-tipo t) (tetramino-rot t)))
+  
+  (soma (flatten (lipeca 0 0 peca)) (tetramino-pos t)))
+ 
+(define (soma lista lc)
+  (cond
+    [(empty? lista) empty]
+    [else
+     (cons (posn (+ (posn-lin lc) (posn-lin (first lista))) (+ (posn-col lc) (posn-col (first lista)))) (soma (rest lista) lc))]))
+         
+(define (lipeca lin col peca)
+  (cond
+    [(empty? peca) empty]
+    [else
+     (cons (igual1 lin col (first peca)) (lipeca (add1 lin) col (rest peca)))]))
+      
+
+     
+(define (igual1 lin col lpeca)
+  (cond
+    [(empty? lpeca) empty]
+    [(= 1 (first lpeca)) (cons (posn lin col) (igual1 lin (add1 col) (rest lpeca)))]
+    [else
+     (igual1 lin (add1 col) (rest lpeca))]))
+     
+     
 
 ;; Lista(Posn) Natural Natural -> Boolean
 ;; Devolve verdadeiro se todas os posições de lp são válidas, isto é, estão

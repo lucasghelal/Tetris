@@ -1,1 +1,0 @@
-("5.3.4" ("a66689eabe957c90d7eabd4333515a851ebb5998" . "054fc8ce3757849278ad36afde70bb9d0aa9f4ed") #"/home/lucas/FACUL/Paradigma Logico e Funcional/tetris-racket/src/racket/tetra-tipos.rkt" (collects #"2htdp" #"image.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"lang" #"reader.rkt"))

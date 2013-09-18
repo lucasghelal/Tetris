@@ -1,1 +1,0 @@
-("5.3.4" ("e3b174069cc8025a73a1f8f967b22a0529c25349" . "3d1beffe92ace37f959f106655149baa1740377b") (collects #"2htdp" #"universe.rkt") #"/home/lucas/FACUL/Paradigma Logico e Funcional/tetris-racket/src/racket/base.rkt" (collects #"2htdp" #"image.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"lang" #"reader.rkt"))
